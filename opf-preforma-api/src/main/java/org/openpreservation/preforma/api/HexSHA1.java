@@ -26,5 +26,5 @@ public interface HexSHA1 {
     /**
      * @return A string in the Hex SHA1 format above.
      */
-    public String getHexSHA1();
+    public String getValue();
 }
