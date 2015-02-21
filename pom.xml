@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.openpreservation</groupId>
+	<artifactId>opf-preforma-ref</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Open Preservation Foundation Reference PREFORMA Conformance Checker and SHELL</name>
+	<description>API, abstract helper classes, and reference implementation of a PREFORMA Conformance Checker</description>
+	<organization>
+		<name>The Open Preservation Foundation</name>
+		<url>http://www.openpreservation.org/</url>
+	</organization>
+	<inceptionYear>2010</inceptionYear>
+   <issueManagement>
+      <system>GitHub Issues</system>
+      <url>https://github.com/openpreserve/opf-preforma-api/issues</url>
+   </issueManagement>
+   <scm>
+      <connection>scm:git:git@github.com:openpreserve/opf-preforma-api.git</connection>
+      <developerConnection>scm:git:git@github.com:openpreserve/opf-preforma-api.git</developerConnection>
+      <url>git@github.com:openpreserve/opf-preforma-api.git</url>
+   </scm>
+	<developers>
+		<developer>
+			<name>Carl Wilson</name>
+			<email>carl@openpreservation.org</email>
+			<organization>The Open Preservation Foundation</organization>
+		</developer>
+	</developers>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.source.version>1.7</jdk.source.version>
+		<jdk.target.version>1.7</jdk.target.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>${jdk.source.version}</source>
+					<target>${jdk.target.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<attach>true</attach>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.4</version>
+							<configuration>
+								<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+								<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+							</configuration>
+							<!-- simpler configuration without reportSets available for usual 
+								cases -->
+							<!-- distribution-management, index, dependencies, help, issue-tracking, 
+								plugins, cim, license, dependency-management, mailing-list, project-team, 
+								dependency-convergence, scm, plugin-management, modules, summary -->
+							<reports>
+								<report>index</report>
+								<report>summary</report>
+								<report>license</report>
+								<report>dependencies</report>
+								<report>plugins</report>
+								<report>project-team</report>
+								<report>issue-tracking</report>
+								<report>scm</report>
+								<report>cim</report>
+								<report>modules</report>
+							</reports>
+						</plugin>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>findbugs-maven-plugin</artifactId>
+							<configuration>
+								<xmlOutput>true</xmlOutput>
+								<failsOnError>false</failsOnError>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>cobertura-maven-plugin</artifactId>
+							<version>2.5.1</version>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-pmd-plugin</artifactId>
+							<version>2.7.1</version>
+							<configuration>
+								<linkXref>true</linkXref>
+								<minimumTokens>100</minimumTokens>
+								<targetJdk>1.7</targetJdk>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<configuration>
+								<failOnError>false</failOnError>
+							</configuration>
+						</plugin>
+					</reportPlugins>
+					<attach>true</attach>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>nl.jqno.equalsverifier</groupId>
+				<artifactId>equalsverifier</artifactId>
+				<version>1.5.1</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
