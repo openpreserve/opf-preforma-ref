@@ -12,14 +12,17 @@
 		<url>http://www.openpreservation.org/</url>
 	</organization>
 	<inceptionYear>2010</inceptionYear>
+	<modules>
+		<module>opf-preforma-api</module>
+	</modules>
    <issueManagement>
       <system>GitHub Issues</system>
-      <url>https://github.com/openpreserve/opf-preforma-api/issues</url>
+      <url>https://github.com/openpreserve/opf-preforma-ref/issues</url>
    </issueManagement>
    <scm>
-      <connection>scm:git:git@github.com:openpreserve/opf-preforma-api.git</connection>
-      <developerConnection>scm:git:git@github.com:openpreserve/opf-preforma-api.git</developerConnection>
-      <url>git@github.com:openpreserve/opf-preforma-api.git</url>
+      <connection>scm:git:git@github.com:openpreserve/opf-preforma-ref.git</connection>
+      <developerConnection>scm:git:git@github.com:openpreserve/opf-preforma-ref.git</developerConnection>
+      <url>git@github.com:openpreserve/opf-preforma-ref.git</url>
    </scm>
 	<developers>
 		<developer>
